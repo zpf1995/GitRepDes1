@@ -1,0 +1,56 @@
+﻿<Window x:Class="Org.Zpf.XFeiCards.UI.Implement.Option"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Org.Zpf.XFeiCards.UI.Implement"
+        mc:Ignorable="d"
+        Title="Option" Height="345" Width="434" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="42"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0" Background="#C40D42">
+            <Image Source=".\Images\Banner.png" Stretch="UniformToFill" Canvas.Top="0" Canvas.Left="0" Height="56"></Image>
+            <Label Canvas.Right="10" Canvas.Top="15" Content="Options" Foreground="#FFF3CED9" FontWeight="Bold" FontFamily="Microsoft PhagsPa" FontSize="18"  ></Label>
+        </Canvas>
+        <Canvas Grid.Row="1" Background="Black">
+            <Canvas.Resources>
+                <local:ComboxItemValue x:Key="ComboxItemData" />
+            </Canvas.Resources>
+            <TabControl Grid.RowSpan="2" Height="214" Width="427" Grid.Row="1">
+                <TabItem Header="Game" >
+                    <Grid>
+
+                        <CheckBox Content="play against Computer!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,40,0,0" Name="playGame" Grid.ColumnSpan="3" IsChecked="{Binding Path=IsCheckBox}"></CheckBox>
+                        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="11,60,0,0" Content="Number of players:" Grid.ColumnSpan="3"></Label>
+                        <ComboBox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="268,66,0,0" Width="58"   Grid.Column="2" IsEditable="True" Name="numberOfPlayer" IsEnabled="{Binding ElementName=playGame,Path=IsChecked}" ItemsSource="{Binding Source={StaticResource ComboxItemData}}" SelectedValue="{Binding Path=NumerOfPlayers}">
+                            <!--<ComboBoxItem Content="2"></ComboBoxItem>
+                            <ComboBoxItem Content="3"></ComboBoxItem>
+                            <ComboBoxItem Content="4"></ComboBoxItem>-->
+                            
+                        </ComboBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Computer Player">
+                    <Grid>
+                        
+                        <Label Content="SKIL LEVEL:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.ColumnSpan="2"></Label>
+                        <RadioButton Content="Dumb" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="104,41,0,0" IsChecked="True" Name="DumbRadioButton" Checked="DumbRadioButton_Checked" Grid.Column="1"></RadioButton>
+                        <RadioButton Content="Good" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="104,71,0,0" Name="GoodRadioButton" Checked="GoodRadioButton_Checked" Grid.Column="1"></RadioButton>
+                        <RadioButton Content="Cheats" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="104,101,0,0" Name="CheatsRadioButton" Checked="CheatsRadioButton_Checked" Grid.Column="1"></RadioButton>
+                    </Grid>
+                </TabItem>
+
+
+            </TabControl>
+        </Canvas>
+        <Canvas Grid.Row="3">
+            <Button Canvas.Right="10" Canvas.Bottom="8" Width="75" Height="20" Content="Cancel" Name="cancelButton" Click="cancelButton_Click" ></Button>
+            <Button Canvas.Right="95" Canvas.Bottom="8" Width="75" Height="20" Content="OK" Name="okButton" Click="okButton_Click"></Button>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="Org.Zpf.XFeiCards.UI.Implement.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Org.Zpf.XFeiCards.UI.Implement"
+        mc:Ignorable="d"
+        Title="About" Height="300" Width="434" ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="42"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0" Background="#C40D42">
+            <Image Source=".\Images\Banner.png" Stretch="UniformToFill" Canvas.Top="0" Canvas.Left="0" Height="56"></Image>
+            <Label Canvas.Right="10" Canvas.Top="25" Content="Karli Cards" Foreground="#FFF3CED9" FontWeight="Bold" FontFamily="Microsoft PhagsPa"  ></Label>
+        </Canvas>
+        <Canvas Grid.Row="1" Background="Black">
+            <Label Canvas.Top="0" Canvas.Left="5" Content="KariLi Cards (c) Copyright 2017 by zhaopf and all readers" Foreground="#FFF7DFE5" FontWeight="Bold" FontSize="11"/>
+        </Canvas>
+        <Canvas Grid.Row="2" >
+            <StackPanel Orientation="Vertical">
+                <Label Content="CardLib and Idea developed by zhaopf" Foreground="#FF8B6F6F" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="20,20,0,0"></Label>
+                <Label Content="Graphics User Interface developed by Jacob Hammer" Foreground="#FF8B6F6F" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="20,0,0,0"></Label>
+                <TextBlock Text="Karli Cards developed with Visual C#2015 for Wrox Press.You can visit Wrox Press at http://www.wrox.com" Foreground="#FF8B6F6F" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="20,0,0,0" Width="400" Height="39" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="14" />
+            </StackPanel>
+        </Canvas>
+        <Canvas Grid.Row="3">
+            <Button Canvas.Right="30" Canvas.Bottom="5" Width="75" Height="30" Content="OK" Click="Button_Click"></Button>
+        </Canvas>
+    </Grid>
+</Window>

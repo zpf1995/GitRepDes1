@@ -1,0 +1,34 @@
+﻿<Window x:Class="Org.Zpf.XFeiCards.UI.Implement.StartGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Org.Zpf.XFeiCards.UI.Implement"
+        mc:Ignorable="d"
+        Title="Start New Game" Height="345" Width="445" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="42"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0" Background="#C40D42">
+            <Image Source=".\Images\Banner.png" Stretch="UniformToFill" Canvas.Top="0" Canvas.Left="0" Height="56"></Image>
+            <Label Canvas.Right="10" Canvas.Top="15" Content="New Games" Foreground="#FFF3CED9" FontWeight="Bold" FontFamily="Microsoft PhagsPa" FontSize="18"  ></Label>
+        </Canvas>
+        <Canvas Grid.Row="1" Background="Black"/>
+        <Canvas Grid.Row="2" Margin="-3,3,3,39" Grid.RowSpan="2" >
+            <Label x:Name="label" Content="Players" Canvas.Left="15" Canvas.Top="10" RenderTransformOrigin="-0.82,0.115"/>
+            <Label x:Name="label1" Content="Player" Canvas.Left="268" Canvas.Top="9"/>
+            <ListBox x:Name="DisplayPlayerListBox" Height="148" Canvas.Left="14" Canvas.Top="37" Width="235"/>
+            <TextBox x:Name="newPlayerTextBox" Height="23" Canvas.Left="264" TextWrapping="Wrap" Canvas.Top="47" Width="166"/>
+            <Button x:Name="addPlayerButton" Content="Add" Canvas.Left="356" Canvas.Top="80" Width="75"/>
+
+        </Canvas>
+        <Canvas Grid.Row="3">
+            <Button Canvas.Right="10" Canvas.Bottom="8" Width="75" Height="20" Content="Cancel" Name="cancelButton"></Button>
+            <Button Canvas.Right="95" Canvas.Bottom="8" Width="75" Height="20" Content="OK" Name="okButton"></Button>
+        </Canvas>
+    </Grid>
+</Window>
